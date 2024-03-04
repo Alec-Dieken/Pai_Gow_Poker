@@ -3,31 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    --background-green: #009764;
+    --button-link-bg: #137e58;
+    --button-link-bg-hover: #12d18f;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: var(--background-green);
+    overflow: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+main {
+    font-family: "Eurostile", sans-serif;
+}
+
+.title {
+    width: fit-content;
+}
+
+.title h1 {
+    text-shadow: 2px 2px 3px #164535;
+}
+
+.title img {
+    filter: drop-shadow(2px 2px 3px #164535);
+}
+
+.button-link {
+    width: 120px;
+    padding: 0.5rem 0;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: var(--button-link-bg);
+    transition: background-color 0.5s ease;
+}
+
+.button-link:hover {
+    background-color: var(--button-link-bg-hover);
+}
+
+.playerhand .solution {
+    display: none;
+}
+
+.playerhand.hover-enable:hover .solution {
+    display: block;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: "Eurostile";
+    src: url("./fonts/eurostile.TTF");
 }
